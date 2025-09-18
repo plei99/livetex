@@ -3,9 +3,9 @@ import logoStar from '../assets/logo-star.svg'
 import { author } from '../sample'
 
 const socials = [
-  { icon: 'ri-tiktok-fill', link: author.tiktok },
-	{ icon: 'ri-instagram-line', link: author.ig },
-  { icon: 'ri-twitter-x-line', link: author.x },
+  { icon: 'ri-github-fill', link: author.github },
+	{ icon: 'ri-home-heart-line', link: author.homepage },
+  { icon: 'ri-bilibili-fill', link: author.bilibili },
 ]
 
 ---
@@ -18,7 +18,7 @@ const socials = [
         </a>
       </div>
       <div class="text-center">
-        <p>© {new Date().getFullYear()} {author.nickname}. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} {author.name}. All rights reserved.</p>
       </div>
       <div class="flex md:justify-end gap-5">
         {socials.map(item => ( 

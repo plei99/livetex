@@ -6,20 +6,208 @@ import arrowCard from '../assets/arrow-card.svg'
 
 const portfolio = [
   { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
+    name: 'Higher genus GW theory', desc: `What does it take to prove enumerative mirror symmetry for the quintic 3-fold in higher genus? Find out more about recent breakthroughs here.`,
+    date: `Jan 2025`,
+    place: `Simons Center`,
+    url: `https://github.com/plei99/notes/raw/master/misc/simons25/hg.pdf`
   },
   { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&w=1600`
+    name: 'Blowup formula in GW theory', desc: `How do GW invariants change under birational transformations? Learn about Iritani's work on the subject here.`,
+    date: `Spring 2024`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/blowup/BIR.pdf`
   },
   { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/441963/pexels-photo-441963.jpeg?auto=compress&cs=tinysrgb&w=1600`
+    name: 'Integrability, enumerative geometry, quantization', desc: `Covers enumerative geometry (GW/Hurwitz, GW/DT, quantum K-theory) and (quantum) integrable systems (KdV, W-constraints, etc).`,
+    date: `Summer 2022`,
+    place: `Simons Center`,
+    url: `https://github.com/plei99/notes/raw/master/misc/simons/notes.pdf`
   },
   { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1600`
+    name: 'Moduli spaces and hyperkähler manifolds', desc: `Covers hyperkähler manifolds, their geometry, some constructions, and moduli spaces of sheaves on K3 surfaces.`,
+    date: `Fall 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/f2021/HK/notes.pdf`
+  },
+  { 
+    name: 'Minimal Model Program', desc: `Ever wondered how to classify algebraic varieties up to birational equivalence? The MMP is the answer! Covers the basics of the MMP and the MMP in dimension 3.`,
+    date: `Spring 2021`,
+    place: `Zoom`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/MMP/notes.pdf`
+  },
+  { 
+    name: 'Class field theory', desc: `Covers local and global class field theory, including the proofs of the main theorems and some applications.`,
+    date: `Spring 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/s2021/NT/notes.pdf`
+  },
+  { 
+    name: 'Algebraic topology II', desc: `Covers spectral sequences and applications to homotopy groups of spheres, characteristic classes, K-theory, and the Atiyah-Singer index theorem.`,
+    date: `Spring 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/s2021/AT/notes.pdf`
+  },
+  { 
+    name: 'The Count of Instantons', desc: `On the mathematics (representation theory, geometry, probability theory) and physics (gauge theory) of instanton counting. Notes partially taken by Davis Lazowski.`,
+    date: `2023-24`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/f2023/instantons/notes.pdf`
+  },
+  { 
+    name: 'Commutative algebra', desc: `Covers the first part of Matsumura's Commutative Algebra with a focus on dimension theory.`,
+    date: `Fall 2020`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/f2020/CA/notes.pdf`
+  },
+  { 
+    name: 'Simons Summer Math Workshop 2023', desc: `Covers log GW theory in both the algebraic and symplectic settings, topological recursion and the spin GW/Hurwitz correspondence, and Givental-Teleman reconstruction of semisimple CohFTs.`,
+    date: `Summer 2023`,
+    place: `Simons Center`,
+    url: `https://github.com/plei99/notes/raw/master/misc/simons2/notes.pdf`
+  }, 
+  { 
+    name: 'Informal enumerative geometry seminar', desc: `Covers a variety of topics in enumerative geometry, including GW theory, DT theory, and quantum K-theory and its relationship to geometric representation theory.`,
+    date: `Spring 2022`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/IEG/notes.pdf`
+  },
+  { 
+    name: 'Hyperbolicity', desc: `When is a variety hyperbolic? How many rational points does it have? How many rational curves lie on it? Find out here!`,
+    date: `Spring 2022`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/HYP/notes.pdf`
+  },
+  { 
+    name: 'Geometric rep theory', desc: `What is a D-module and how do they appear in representation theory? Learn about the Beilinson-Bernstein localization theorem and the Kazhdan-Lusztig conjectures.`,
+    date: `Spring 2022`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/GRT/notes.pdf`
+  },
+  { 
+    name: 'Hodge theory', desc: `Covers the proof of the existence of mixed Hodge structures for smooth varieties and some applications.`,
+    date: `Fall 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/HT/notes.pdf`
+  },
+  { 
+    name: 'Deformation theory', desc: `Covers how to deform schemes and sheaves, plus the moduli of stable curves and of coherent sheaves.`,
+    date: `Fall 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/DEF/notes.pdf`
+  },
+  { 
+    name: 'DAHA and knot homology', desc: `What on earth is a double affine Hecke algebra? How does it relate to more familiar mathematics? Find out here!`,
+    date: `Fall 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/DAHA/notes.pdf`
+  },
+  { 
+    name: 'Category O', desc: `Covers the basic theory of category O for semisimple Lie algebras, including the Kazhdan-Lusztig conjectures.`,
+    date: `Fall 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/CO/notes.pdf`
+  },
+  { 
+    name: 'Intersection theory', desc: `Ever wondered what a Chow ring is? Or how to compute intersection numbers on moduli spaces? Find out here!`,
+    date: `Spring 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/INT/notes.pdf`
+  },
+  { 
+    name: 'Schemes', desc: `Covers schemes, sheaves, and cohomology, mostly following Hartshorne.`,
+    date: `Spring 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/s2021/AG/notes.pdf`
+  },
+  { 
+    name: 'Lie groups and representations II', desc: `Covers invariant theory, Lie algebra cohomology, the cohomology of flag varieties, root systems, and Kac-Moody Lie algebras.`,
+    date: `Spring 2021`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/s2021/RT/notes.pdf`
+  },
+  { 
+    name: 'Geometric invariant theory', desc: `Covers the basics of reductive GIT and applications to moduli spaces of curves.`,
+    date: `Fall 2020`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/GIT/notes.pdf`
+  },
+  { 
+    name: 'FGA explained', desc: `Ever wondered what Grothendieck meant in FGA? Find out here!`,
+    date: `Fall 2020`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/seminars/FGA/notes.pdf`
+  },
+  { 
+    name: 'Lie groups and representations I', desc: `Covers the representation theory and classification of semisimple Lie groups.`,
+    date: `Fall 2020`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/f2020/RT/notes.pdf`
+  },
+  { 
+    name: 'Algebraic topology I', desc: `Covers homotopy groups, homology, cohomology, and Poincaré duality.`,
+    date: `Fall 2020`,
+    place: `Columbia`,
+    url: `https://github.com/plei99/notes/raw/master/Columbia/f2020/AT/notes.pdf`
+  },
+  { 
+    name: 'Singular spaces', desc: `What is a singularity? How can we measure how bad it is and study its geometry? Find out here!`,
+    date: `Spring 2020`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/s2020/math797d/notes.pdf`
+  },
+  { 
+    name: 'Symplectic topology', desc: `Covers the basics of symplectic manifolds and some results in the topology of symplectic 4-manifolds.`,
+    date: `Spring 2020`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/s2020/math705/notes.pdf`
+  },
+  { 
+    name: 'Lie Algebras', desc: `Covers the basic theory of Lie algebras and the classification and representation theory of semisimple Lie algebras.`,
+    date: `Fall 2019`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/f2019/math718/notes.pdf`
+  },
+  { 
+    name: 'Manifolds', desc: `Covers the basic theory of smooth manifolds, differential forms, and de Rham cohomology.`,
+    date: `Fall 2019`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/f2019/math703/notes.pdf`
+  },
+  { 
+    name: 'Varieties', desc: `Covers the basic theory of algebraic varieties, including dimension, tangent spaces, and divisors.`,
+    date: `Spring 2019`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/s2019/math797w/notes.pdf`
+  },
+  { 
+    name: 'Algebra II', desc: `Covers the basic theory of algebraic varieties, including dimension, tangent spaces, and divisors.`,
+    date: `Spring 2019`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/s2019/math612/notes.pdf`
+  },
+  { 
+    name: 'Analysis II', desc: `Covers Hilbert and Banach spaces, convergence and compactness in infinite dimensions, and Fourier theory.`,
+    date: `Spring 2019`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/s2019/math624/notes.pdf`
+  },
+  { 
+    name: 'Representation theory', desc: `Covers the representation theory of finite groups, Springer theory in type A, and the representation theory and classification of SLn.`,
+    date: `Fall 2018`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/f2018/math797rt/notes.pdf`
+  },
+  { 
+    name: 'Analysis I', desc: `Covers measure theory, the Lebesgue integral, differentiation, and abstract measure theory.`,
+    date: `Fall 2018`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/f2018/math623/notes.pdf`
+  },
+  { 
+    name: 'Complex analysis', desc: `Covers the basic theory of holomorphic functions, elliptic functions, and the Riemann mapping theorem.`,
+    date: `Spring 2018`,
+    place: `UMass`,
+    url: `https://github.com/plei99/notes/raw/master/UMass/s2018/math621/notes.pdf`
   },
 ]
 ---
@@ -27,21 +215,22 @@ const portfolio = [
 
 <section class="py-25 space-y-10 px-5" id="work">
     <div class="max-w-md mx-auto relative ">
-      <h1 class="text-4xl font-medium text-center">My Portfolio</h1>
+      <h1 class="text-4xl font-medium text-center">Notes</h1>
       <img src={svgUnderline.src} alt="arrow" width="140" class="absolute left-50 -bottom-1" />
     </div>
   
     <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"> 
       {portfolio.map(item => ( 
-        <a href="#" class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
-          <div class="w-full h-[200px] overflow-hidden border-2">
+        <a href={item.url} class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
+          {/* <div class="w-full h-[200px] overflow-hidden border-2">
            <img src={item.cover} alt="" class="w-full h-full object-cover" />
-          </div>
+          </div> */}
           <div class="space-y-1 pt-4">
             <div class="flex pr-2">
               <h2 class="text-xl font-medium flex-1">{item.name}</h2>
               <img src={arrowCard.src} alt="arrow" width="25" />
             </div>
+            <p class="text-xs">{item.date}, {item.place}</p>
             <p class="mr-20">{item.desc}</p>
           </div>
           <Bars />

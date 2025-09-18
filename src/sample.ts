@@ -1,17 +1,17 @@
 const author = {
-    name: `Angela`,
-    nickname: `angie`,
-    tiktok: `https://www.tiktok.com/@codetonero`,
-    ig: `https://www.instagram.com/codetonero/`,
-    x: `https://x.com/codetonero`,
-    email: 'mailto:anthonylannn@gmail.com'
+    name: `Patrick Lei`,
+    nickname: `Notes`,
+    github: `https://www.tiktok.com/@codetonero`,
+    bilibili: `https://space.bilibili.com/3546599313640115`,
+    homepage: `https://plei99.github.io/`,
+    email: 'mailto:patrick.lei@bc.edu'
 
 }
 
 
 const buy = {
-    title: `See on Github`,
-    link: `https://github.com/anthonylan/angie`
+    title: `Source Repo`,
+    link: `https://github.com/plei99/notes`
 }
 
 
