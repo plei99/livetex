@@ -1,5 +1,5 @@
 const author = {
-    name: `Patrick Lei`,
+    name: `Patrick`,
     nickname: `Notes`,
     github: `https://www.tiktok.com/@codetonero`,
     bilibili: `https://space.bilibili.com/3546599313640115`,
