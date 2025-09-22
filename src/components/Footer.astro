@@ -3,9 +3,9 @@ import logoStar from '../assets/logo-star.svg'
 import { author } from '../sample'
 
 const socials = [
-  { icon: 'ri-github-fill', link: author.github },
-	{ icon: 'ri-home-heart-line', link: author.homepage },
-  { icon: 'ri-bilibili-fill', link: author.bilibili },
+  { icon: 'ri-github-fill', link: author.github, name: 'GitHub' },
+	{ icon: 'ri-home-heart-line', link: author.homepage, name: 'Homepage' },
+  { icon: 'ri-bilibili-fill', link: author.bilibili, name: 'Bilibili' },
 ]
 
 ---
@@ -22,7 +22,7 @@ const socials = [
       </div>
       <div class="flex md:justify-end gap-5">
         {socials.map(item => ( 
-          <a href={item.link} target="_blank" class="transition-all duration-200 hover:translate-y-[2px]"><i class={`${item.icon} text-2xl`}></i></a>
+          <a href={item.link} target="_blank" class="transition-all duration-200 hover:translate-y-[2px]" aria-label={item.name}><i class={`${item.icon} text-2xl`}></i></a>
         ))}
       </div>
     </div>
