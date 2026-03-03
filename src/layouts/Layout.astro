@@ -1,9 +1,82 @@
+---
+import '../styles/global.css'
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 	<head>
+		<script is:inline>
+			(() => {
+				const storageKey = 'theme-preference'
+				const root = document.documentElement
+				const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+				const getStoredTheme = () => {
+					try {
+						const value = localStorage.getItem(storageKey)
+						return value === 'dark' || value === 'light' ? value : null
+					} catch {
+						return null
+					}
+				}
+
+				const getSystemTheme = () => (mediaQuery.matches ? 'dark' : 'light')
+
+				const applyTheme = (theme) => {
+					root.dataset.theme = theme
+					root.style.colorScheme = theme
+					window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }))
+				}
+
+				const setTheme = (theme) => {
+					if (theme !== 'light' && theme !== 'dark') {
+						return
+					}
+
+					try {
+						localStorage.setItem(storageKey, theme)
+					} catch {}
+					applyTheme(theme)
+				}
+
+				const clearThemePreference = () => {
+					try {
+						localStorage.removeItem(storageKey)
+					} catch {}
+					applyTheme(getSystemTheme())
+				}
+
+				applyTheme(getStoredTheme() || getSystemTheme())
+
+				const onSystemThemeChange = () => {
+					if (!getStoredTheme()) {
+						applyTheme(getSystemTheme())
+					}
+				}
+
+				if (typeof mediaQuery.addEventListener === 'function') {
+					mediaQuery.addEventListener('change', onSystemThemeChange)
+				} else if (typeof mediaQuery.addListener === 'function') {
+					mediaQuery.addListener(onSystemThemeChange)
+				}
+
+				window.themeController = {
+					toggleTheme() {
+						const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark'
+						setTheme(nextTheme)
+					},
+					setTheme,
+					clearThemePreference,
+					getTheme() {
+						return root.dataset.theme || getSystemTheme()
+					},
+				}
+			})()
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="Patrick Lei's notes from courses, seminars, and workshops." />
+		<meta name="color-scheme" content="light dark" />
 		<link rel="icon" type="image/svg+xml" href="/livetex/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Patrick Lei | Notes</title>
@@ -12,24 +85,3 @@
 		<slot />
 	</body>
 </html>
-
-<style>
-
-:root{
-	--main-bg: #FEFFF0;
-	--blue: #BAE6FF;
-	--yellow: #FFDC58;
-}
-
-html,
-body {
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--main-bg);
-	font-family: "Space Grotesk", sans-serif;
-	scroll-behavior: smooth;
-}
-
-
-</style>

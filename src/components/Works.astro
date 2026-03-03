@@ -3,6 +3,7 @@ import Bars from "./Bars.astro"
 
 import svgUnderline from '../assets/underline.svg'
 import arrowCard from '../assets/arrow-card.svg'
+import arrowCardLight from '../assets/arrow-card-light.svg'
 
 const portfolio = [
   { 
@@ -240,7 +241,8 @@ const portfolio = [
           <div class="space-y-1 pt-4">
             <div class="flex pr-2">
               <h2 class="text-xl font-medium flex-1">{item.name}</h2>
-              <img src={arrowCard.src} alt="arrow" width="25" />
+              <img src={arrowCard.src} alt="" aria-hidden="true" width="25" class="theme-asset-light" />
+              <img src={arrowCardLight.src} alt="" aria-hidden="true" width="25" class="theme-asset-dark" />
             </div>
             <p class="text-xs">{item.date}, {item.place}</p>
             <p class="mr-20">{item.desc}</p>

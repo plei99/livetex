@@ -5,4 +5,103 @@
 
 @import "tailwindcss";
 
+:root {
+  --main-bg: #fefff0;
+  --surface: #ffffff;
+  --text: #111111;
+  --line: #111111;
+  --blue: #bae6ff;
+  --yellow: #ffdc58;
+  --hero-notes-highlight: #ffdc58;
+  --toggle-bg: #ffffff;
+  --toggle-icon: #111111;
+}
 
+:root[data-theme='dark'] {
+  --main-bg: #101317;
+  --surface: #1a2028;
+  --text: #e5e7eb;
+  --line: #d1d5db;
+  --blue: #2f6b8a;
+  --yellow: #f3c84b;
+  --hero-notes-highlight: #b88a15;
+  --toggle-bg: #0f172a;
+  --toggle-icon: #f9fafb;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg);
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.bg-white {
+  background-color: var(--surface) !important;
+}
+
+.border-black {
+  border-color: var(--line) !important;
+}
+
+.text-black {
+  color: var(--text) !important;
+}
+
+:root[data-theme='dark'] svg path[fill='black'] {
+  fill: var(--text);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--line);
+  border-radius: 9999px;
+  background-color: var(--toggle-bg);
+  color: var(--toggle-icon);
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(1px);
+}
+
+.theme-toggle .ri-sun-line {
+  display: none;
+}
+
+:root[data-theme='dark'] .theme-toggle .ri-sun-line {
+  display: inline-block;
+}
+
+:root[data-theme='dark'] .theme-toggle .ri-moon-line {
+  display: none;
+}
+
+.theme-asset-light {
+  display: inline-block;
+}
+
+.theme-asset-dark {
+  display: none;
+}
+
+:root[data-theme='dark'] .theme-asset-light {
+  display: none;
+}
+
+:root[data-theme='dark'] .theme-asset-dark {
+  display: inline-block;
+}

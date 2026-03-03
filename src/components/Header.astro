@@ -1,7 +1,8 @@
 ---
 import logoStar from '../assets/logo-star.svg'
+import logoStarLight from '../assets/logo-star-light.svg'
 import svgPinkStar from '../assets/pink-star.svg'
-import { author, buy } from '../sample'
+import { author } from '../sample'
 
 const links = [
     { name: 'Github', path: 'https://github.com/plei99/notes', target: '_self' },
@@ -28,7 +29,9 @@ const { pathname } = Astro.url
         <nav class="flex w-full items-center p-2 md:p-0">
             <div class="flex-1 font-bold">
                 <a href="/" class="flex items-center gap-2 pl-3">
-                    <img src={logoStar.src} alt="logo" width="26" /> {author.nickname}
+                    <img src={logoStar.src} alt="" aria-hidden="true" width="26" class="theme-asset-light" />
+                    <img src={logoStarLight.src} alt="" aria-hidden="true" width="26" class="theme-asset-dark" />
+                    {author.nickname}
                 </a>
             </div>
             <a href="#" class="flex md:hidden" id="menu-open">
@@ -43,13 +46,21 @@ const { pathname } = Astro.url
                     </li>
                 ))}
             </ul>
+            <button type="button" class="theme-toggle ml-3" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+                <i class="ri-moon-line text-lg" aria-hidden="true"></i>
+                <i class="ri-sun-line text-lg" aria-hidden="true"></i>
+            </button>
         </nav>
     </div>
   </header>
 
   <div class="block md:hidden fixed left-0 top-0 h-full w-full bg-white z-20 p-3 transition-all duration-300 -translate-x-[100%]" id="menu-content">
-    <div class="flex p-6">
+    <div class="flex items-center p-6">
         <h3 class="flex-1 font-bold uppercase">Menu</h3>
+        <button type="button" class="theme-toggle mr-3" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+            <i class="ri-moon-line text-lg" aria-hidden="true"></i>
+            <i class="ri-sun-line text-lg" aria-hidden="true"></i>
+        </button>
         <a href="#" id="menu-close">               
            <i class="ri-close-line text-3xl"></i>
         </a>
@@ -71,6 +82,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuContent = document.querySelector('#menu-content') 
     const menuOpen = document.querySelector('#menu-open') 
     const menuClose = document.querySelector('#menu-close') 
+    const themeButtons = document.querySelectorAll('[data-theme-toggle]')
+
+    const syncThemeToggleLabel = () => {
+        const isDark = document.documentElement.dataset.theme === 'dark'
+        const actionText = isDark ? 'Switch to light mode' : 'Switch to dark mode'
+
+        themeButtons.forEach((button) => {
+            button.setAttribute('aria-label', actionText)
+            button.setAttribute('title', actionText)
+        })
+    }
 
 
     menuOpen?.addEventListener('click', (e) => {
@@ -89,5 +111,15 @@ document.addEventListener('DOMContentLoaded', function () {
             menuContent?.classList.add('-translate-x-[100%]')
         })
     })
+
+    themeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            window.themeController?.toggleTheme()
+            syncThemeToggleLabel()
+        })
+    })
+
+    window.addEventListener('themechange', syncThemeToggleLabel)
+    syncThemeToggleLabel()
 })
 </script>
